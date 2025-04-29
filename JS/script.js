@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("ticket-form");
+    const errorAlert = document.getElementById("error-alert");
 
     function handleForm(event) {
         event.preventDefault();
@@ -15,9 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         /* validazione degli input */
         if (kmInput.trim() === '' || ageInput.trim() === '' || km <= 0 || age <= 0) {
-            console.log("Inserire valori validi!");
+            errorAlert.classList.remove("d-none");
             return;
         }
+
+        errorAlert.classList.add("d-none");
 
         /* calcolo del prezzo base del biglietto */
         const pricePerKm = 0.21;
@@ -33,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         /* output */
-        console.log(`Nominativo del Biglietto: ${firstName}, ${lastName}`);
+        console.log(`Nominativo del Biglietto: ${firstName} ${lastName}`);
         console.log(`Prezzo del biglietto: €${totalPrice.toFixed(2)}`);
     }
 
