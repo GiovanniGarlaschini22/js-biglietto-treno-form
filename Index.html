@@ -13,39 +13,42 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="container mt-5">
-        <div class="card p-4">
+<body class="bg-danger">
+    <div class="container mt-3">
+        <div class="card p-4 bg-white border-white border-4">
           <h2 class="mb-4">Calcolo Prezzo Biglietto del Treno</h2>
           <form id="ticket-form">
             <div class="row mb-3">
                 <div class="col">
                 <!----------------------- richiesta nominativo ----------------------->
                   <label for="first-name" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="first-name" required>
+                  <input type="text" class="border-3 border-light form-control" id="first-name" required>
                 </div>
                 <div class="col">
                   <label for="last-name" class="form-label">Cognome</label>
-                  <input type="text" class="form-control" id="last-name" required>
+                  <input type="text" class="border-3 border-light form-control" id="last-name" required>
                 </div>
             </div>
             <div class="row mb-3">
               <div class="col">
                 <!------------------------------- richiesta km ------------------------------->
                 <label for="kilometers" class="form-label">Chilometri da percorrere</label>
-                <input type="number" class="form-control" id="kilometers" required>
+                <input type="number" class="border-3 border-light form-control" id="kilometers" required>
               </div>
               <div class="col">
                 <!------------------------------- richiesta età ------------------------------->
                 <label for="age" class="form-label">Età del passeggero</label>
-                <input type="number" class="form-control" id="age" required>
+                <input type="number" class="border-3 border-light form-control" id="age" required>
               </div>
             </div>
             <!------------------------------- bottone calcolo ------------------------------->
-            <button type="submit" class="btn btn-primary">Calcola Prezzo</button>
+            <button type="submit" class="btn bg-danger fw-bold text-white">Calcola Prezzo</button>
           </form>
         </div>
     </div>
+    <!------------------------------- card dettagli viaggio ------------------------------->
+
+
     <!------------------------------- js script linked ------------------------------->
     <script src="./JS/script.js"></script>
 </body>
