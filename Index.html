@@ -16,51 +16,62 @@
 <body class="bg-danger">
     <div class="container mt-3">
         <div class="card p-4 bg-white border-white border-4">
-          <h2 class="mb-4">Calcolo Prezzo Biglietto del Treno</h2>
-          <form id="ticket-form">
-            <div class="row mb-3">
-                <div class="col">
-                <!----------------------- richiesta nominativo ----------------------->
-                  <label for="first-name" class="form-label">Nome</label>
-                  <input type="text" class="border-3 border-light form-control" id="first-name" required>
+            <h2 class="mb-4">Calcolo Prezzo Biglietto del Treno</h2>
+            <form id="ticket-form">
+                <div class="row mb-3">
+                    <div class="col">
+                        <!----------------------- richiesta nominativo ----------------------->
+                        <label for="first-name" class="form-label">Nome</label>
+                        <input type="text" class="border-3 border-light form-control" id="first-name" required>
+                    </div>
+                    <div class="col">
+                        <label for="last-name" class="form-label">Cognome</label>
+                        <input type="text" class="border-3 border-light form-control" id="last-name" required>
+                    </div>
                 </div>
-                <div class="col">
-                  <label for="last-name" class="form-label">Cognome</label>
-                  <input type="text" class="border-3 border-light form-control" id="last-name" required>
+                <div class="row mb-3">
+                    <div class="col">
+                        <!------------------------------- richiesta km ------------------------------->
+                        <label for="kilometers" class="form-label">Chilometri da percorrere</label>
+                        <input type="number" class="border-3 border-light form-control" id="kilometers" required>
+                    </div>
+                    <div class="col">
+                        <!------------------------------- richiesta età ------------------------------->
+                        <label for="age" class="form-label">Età del passeggero</label>
+                        <input type="number" class="border-3 border-light form-control" id="age" required>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col">
-                <!------------------------------- richiesta km ------------------------------->
-                <label for="kilometers" class="form-label">Chilometri da percorrere</label>
-                <input type="number" class="border-3 border-light form-control" id="kilometers" required>
-              </div>
-              <div class="col">
-                <!------------------------------- richiesta età ------------------------------->
-                <label for="age" class="form-label">Età del passeggero</label>
-                <input type="number" class="border-3 border-light form-control" id="age" required>
-              </div>
-            </div>
-            <!------------------------------- bottone calcolo ------------------------------->
-            <button type="submit" class="btn bg-danger fw-bold text-white">Calcola Prezzo</button>
-          </form>
+                <!------------------------------- bottone calcolo ------------------------------->
+                <button type="submit" class="btn bg-danger fw-bold text-white">Calcola Prezzo</button>
+            </form>
         </div>
 
         <!------------------------------- Alert errore ------------------------------->
         <div id="error-alert" class="alert alert-warning d-flex align-items-center d-none mt-3" role="alert">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-            class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
-            aria-label="Warning:">
-            <path
-            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
+                aria-label="Warning:">
+                <path
+                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
             </svg>
             <p>
-            I valori inseriti non sono corretti. Inserire valori validi per chilometri ed età
+                I valori inseriti non sono corretti. Inserire valori validi per chilometri ed età
             </p>
         </div>
     </div>
     <!------------------------------- card dettagli viaggio ------------------------------->
-    
+    <div id="ticket-card" class="card w-75 mx-auto d-none mt-4">
+        <div class="card-header">
+            Dettaglio Biglietto <span class="badge bg-danger">CODICE CP 92911</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title" id="card-title">Special title treatment</h5>
+            <p class="card-text" id="card-text">With supporting text below as a natural lead-in to additional content.
+            </p>
+            <span class="badge bg-warning text-dark">Carrozza 5</span>
+            <span class="badge bg-warning text-dark">Biglietto Standard</span>
+        </div>
+    </div>
 
     <!------------------------------- js script linked ------------------------------->
     <script src="./JS/script.js"></script>

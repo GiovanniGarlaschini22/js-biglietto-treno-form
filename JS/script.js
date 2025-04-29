@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("ticket-form");
     const errorAlert = document.getElementById("error-alert");
 
+    const ticketCard = document.getElementById("ticket-card");
+    const cardTitle = document.getElementById("card-title");
+    const cardText = document.getElementById("card-text");
+
     function handleForm(event) {
         event.preventDefault();
 
@@ -17,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         /* validazione degli input */
         if (kmInput.trim() === '' || ageInput.trim() === '' || km <= 0 || age <= 0) {
             errorAlert.classList.remove("d-none");
+            ticketCard.classList.add("d-none");
             return;
         }
 
@@ -34,6 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (age >= 18) {
             totalPrice *= 0.6;
         }
+
+        /* Inserimento dati nella card */
+        cardTitle.textContent = `Nominativo: ${firstName} ${lastName}`;
+        cardText.textContent = `Prezzo del biglietto: €${totalPrice.toFixed(2)} per ${km} km`;
+        ticketCard.classList.remove("d-none");
+
+        /* Reset form */
+        form.reset();
 
         /* output */
         console.log(`Nominativo del Biglietto: ${firstName} ${lastName}`);
