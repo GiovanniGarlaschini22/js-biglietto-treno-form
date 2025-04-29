@@ -15,8 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const kmInput = document.getElementById("kilometers").value;
         const ageInput = document.getElementById("age").value;
 
-        const km = Number(kmInput);
-        const age = Number(ageInput);
+        /* trasformazione stringa in numero in base decimale */
+        const km = parseInt(kmInput, 10);
+        const age = parseInt(ageInput, 10);
 
         /* validazione degli input */
         if (kmInput.trim() === '' || ageInput.trim() === '' || km <= 0 || age <= 0) {
